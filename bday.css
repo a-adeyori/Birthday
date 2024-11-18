@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #e6f3ff 0%, #ffffff 100%);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    color: #4a90e2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: fadeInDown 1.5s ease-out, flashingTitle 2s infinite;
+}
+
+.developer-credit {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.8;
+}
+
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    max-width: 1000px;
+    flex-wrap: wrap;
+}
+
+.photo {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    padding: 10px;
+    background-color: #e6f3ff;
+}
+
+.flower-decoration {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.flower-top-left {
+    top: 0;
+    left: 0;
+    animation: floatTopLeft 3s ease-in-out infinite;
+}
+
+.flower-bottom-right {
+    bottom: 0;
+    right: 0;
+    animation: floatBottomRight 3s ease-in-out infinite;
+}
+
+@keyframes flashingTitle {
+    0% {
+        color: #4a90e2;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    50% {
+        color: #87ceeb;
+        text-shadow: 0 0 10px rgba(74, 144, 226, 0.8);
+    }
+    100% {
+        color: #4a90e2;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+}
+
+.flowers-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.flower {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    animation: falling 10s linear infinite;
+}
+
+@keyframes falling {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes floatTopLeft {
+    0%, 100% {
+        transform: translate(0, 0) rotate(-45deg);
+    }
+    50% {
+        transform: translate(0, -10px) rotate(-45deg);
+    }
+}
+
+@keyframes floatBottomRight {
+    0%, 100% {
+        transform: translate(0, 0) rotate(135deg);
+    }
+    50% {
+        transform: translate(0, -10px) rotate(135deg);
+    }
+}
+
+/* Update the surprise button styles */
+.surprise-btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #4a90e2, #87ceeb);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+    animation: pulseAndZoom 2s infinite;
+}
+
+.surprise-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.6);
+}
+
+/* Add the new zoom animation */
+@keyframes pulseAndZoom {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(74, 144, 226, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+    }
+}
